@@ -2,12 +2,17 @@
 
 from pygame import mixer
 from time import time
+from datetime import datetime
+import os
 
 
 def log (filename,activeity):
-    from datetime import datetime
-    with open(filename,"a") as f:
-        f.write(f"you did {activeity} at {datetime.now().ctime()}\n")
+    if os.path.exists(filename):
+        with open(filename,"a") as f:
+            f.write(f"you did {activeity} at {datetime.now().ctime()}\n")
+    else:
+        with open(filename,"w") as f:
+            f.write(f"you did {activeity} at {datetime.now().ctime()}\n")
 
 def music(file,filename,activeity):
     print(f"did you {activeity} ")
