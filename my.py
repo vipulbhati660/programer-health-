@@ -1,11 +1,4 @@
 
-#Healthy Programmer
-# 9am - 5pm
-# Water - water.mp3 (3.5 litres) - Drank - log - Every 40 min
-# Eyes - eyes.mp3 - every 30 min - EyDone - log - Every 30 min
-# Physical activity - physical.mp3 every - 45 min - ExDone - log
-# Rules
-# Pygame module to play audio
 
 from pygame import mixer
 from time import time
@@ -40,7 +33,7 @@ int_physical=time()
 
 while True:
     passed=time()
-    if (passed-int_water)>=10:
+    if (passed-int_water)>=40*60:
         y=music("22.mp3","log/water.txt","drink water")
         if y=='successful':
             int_water=passed
