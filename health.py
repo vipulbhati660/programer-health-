@@ -6,13 +6,12 @@ from datetime import datetime
 import os
 
 
+if not os.path.exists("./log/"):
+    os.mkdir("./log/")
+
 def log (filename,activeity):
-    if os.path.exists(filename):
-        with open(filename,"a") as f:
-            f.write(f"you did {activeity} at {datetime.now().ctime()}\n")
-    else:
-        with open(filename,"w") as f:
-            f.write(f"you did {activeity} at {datetime.now().ctime()}\n")
+    with open(filename,"a") as f:
+        f.write(f"you did {activeity} at {datetime.now().ctime()}\n")
 
 def music(file,filename,activeity):
     print(f"did you {activeity} ")
